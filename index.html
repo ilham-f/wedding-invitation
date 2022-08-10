@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ilham & Ina</title>
+</head>
+<body>
+    <!-- main container -->
+    <div class="container">
+        <!-- main page -->
+        <section id="1" class="main"></section>
+
+        <!-- weddings page -->
+        <section id="2" class="weddings"></section>
+
+        <!-- location page -->
+        <section id="3" class="location">
+            <div class="map-wrapper">
+                <div id="map"></div>
+            </div>
+        </section>
+
+        <!-- gallery page -->
+        <section id="4" class="gallery"></section>
+
+        <!-- gift page -->
+        <section id="5" class="gift">
+            <div class="judul">
+                Hadiah Pernikahan
+            </div>
+            <div class="gift-bri">
+                <div class="bri-logo">
+                    <img src="img/bank-bri.png" style="width: 130px; height: 40px;" alt="bri-logo">
+                </div>
+                <input type="text" id="bri-text" value="028201059238507">
+                <div class="bri-text1">Indah Narendra Dwi</div>
+                <div class="bri-copytext">
+                    <button type="button" onclick="copyBri()">
+                        <span class="icon">
+                            <ion-icon name="copy-outline"></ion-icon>
+                        </span>
+                        <span class="text">Salin No Rekening</span>
+                    </button>
+                </div>
+                <div class="bri-wa"></div>
+            </div>
+            <div class="gift-dana">
+                <div class="dana-logo">
+                    <img src="img/dana.png" style="width: 130px;" alt="dana-logo">
+                </div>
+                <input type="text" id="dana-text" value="081335091854">
+                <div class="dana-text1">Indah Narendra Dwi</div>
+                <div class="dana-copytext">
+                    <button type="button" onclick="copyDana()">
+                        <span class="icon">
+                            <ion-icon name="copy-outline"></ion-icon>
+                        </span>
+                        <span class="text">Salin No Telepon</span>
+                    </button>
+                </div>
+                <div class="dana-wa"></div>
+            </div>
+        </section>
+
+        <!-- navbar -->
+        <div class="nav-wrapper">
+            <div class="nav-indicator"></div>
+            <ul id="nav" class="navbar">
+                <li class="btn">
+                    <a href="#1">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="text">Main</span>
+                    </a>
+                </li>
+                <li class="btn">
+                    <a href="#2">
+                        <span class="icon">
+                            <ion-icon name="rose-outline"></ion-icon>
+                        </span>
+                        <span class="text">Weddings</span>
+                    </a>
+                </li>
+                <li class="btn">
+                    <a href="#3">
+                        <span class="icon">
+                            <ion-icon name="location-outline"></ion-icon>
+                        </span>
+                        <span class="text">Location</span>
+                    </a>
+                </li>
+                <li class="btn">
+                    <a href="#4">
+                        <span class="icon">
+                            <ion-icon name="image-outline"></ion-icon>                        
+                        </span>
+                        <span class="text">Gallery</span>
+                    </a>
+                </li>
+                <li class="btn">
+                    <a href="#5">
+                        <span class="icon">
+                            <ion-icon name="gift-outline"></ion-icon>
+                        </span>
+                        <span class="text">Gift</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div> 
+    <!-- end of main container -->
+
+    <!-- maps api js -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYo-MSUikr8W2oiK6BSC2wngV5bcPWH0I&callback=initMap"></script>
+    <script>
+        function initMap() {
+            const location = {lat: -6.9796213, lng: 112.2990375};
+            const map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 20,
+                center: location
+            });
+            const marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        }
+    </script>
+
+    <!-- copy button bri js  -->
+    <script>
+        function copyBri(){
+        const briText = document.getElementById('bri-text');
+        briText.select();
+        navigator.clipboard.writeText(briText.value);
+        }
+    </script>
+    <!-- copy button dana js -->
+    <script>
+        function copyDana(){
+        const danaText = document.getElementById('dana-text');
+        danaText.select();
+        navigator.clipboard.writeText(danaText.value);
+        }
+    </script>
+
+    <!-- navbar indicator -->
+    <script>
+        window.addEventListener("scroll", () => {
+            let indicator = document.querySelector(".nav-indicator");
+            let pageScroll = document.body.scrollTop || document.documentElement.scrollTop; 
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scroll = (pageScroll/height) * 100;
+
+            indicator.style.width = scroll + "%";
+        })
+    </script>
+
+    <!-- ionicons template -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

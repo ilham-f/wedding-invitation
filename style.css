@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+
+/* Standarisasi */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body {
+    background: #fefeff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* main container */
+.container {
+    position: relative;
+    width: 650px;
+    height: 2000px;
+    margin: auto;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* main page */
+.container .main {
+    background-image: url(img/1.png);
+    background-size: cover;
+    background-position: 0 30%;
+    position: relative;
+    width: 650px;
+    height: 100vh;
+}
+
+/* weddings page */
+.container .weddings {
+    background-image: url(img/2.png);
+    background-size: cover;
+    background-position: 0 60%;
+    position: relative;
+    width: 650px;
+    height: 100vh;
+}
+
+/* location page */
+.container .location {
+    background-image: url(img/3.png);
+    background-size: cover;
+    background-position: 0 30%;
+    position: relative;
+    width: 650px;
+    height: 100vh;
+}
+#map {
+    height: 100%;
+    width: 100%;
+    border-style: solid;
+    border-radius: 6px;
+    border-width: 8px;
+    border-color: rgba(194, 108, 184, 0.3);
+    box-shadow: 0 0 3px;
+}
+.location .map-wrapper {
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    width: 60%;
+    height: 100%;
+    margin: auto;
+    padding-top: 52%;
+    padding-bottom: 25%;
+}
+
+/* gallery page */
+.container .gallery {
+    background-image: url(img/4.png);
+    background-size: cover;
+    background-position: 0 30%;
+    position: relative;
+    width: 650px;
+    height: 100vh;
+}
+
+/* gift page */
+.container .gift {
+    display: grid;
+    background-image: url(img/5.png);
+    background-size: cover;
+    background-position: 0 30%;
+    position: relative;
+    width: 650px;
+    height: 100vh;
+    grid-template-areas: "judul judul"
+                         "bri dana"
+                         "kado kado";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1.5fr;
+}
+.gift .judul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    grid-area: judul;
+}
+
+/* bungkus grid bri */
+.gift .gift-bri {
+    display: grid;
+    grid-area: bri;
+    width: 300px;
+    height: 200px;
+    margin: auto;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 6px;
+    border-color: rgba(194, 108, 184, 0.3);
+    box-shadow: 0 0 3px;
+    grid-template-areas: "logo"
+                         "text1"
+                         "text2"
+                         "copy"
+                         "wa";
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 0.5fr 0.5fr 1fr;
+}
+
+/* bri logo */
+.gift-bri .bri-logo {
+    margin: auto;
+    grid-area: logo;
+}
+
+/* no rekening */
+#bri-text {
+    width: 50%;
+    margin: auto;
+    font-size: medium;
+    border: 0;
+    background-color: #ffffff00;
+}
+
+/* nama pemilik rekening */
+.gift-bri .bri-text1 {
+    margin: auto;
+}
+
+/* bri copytext button */
+.bri-copytext {
+    margin: auto;
+    padding: 5px;
+}
+.bri-copytext > button:hover {
+    text-decoration: none;
+    color: #fefeff;
+    transition-delay: .1s;
+    transition-duration: .1s;
+    transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+    cursor: pointer;
+}
+.bri-copytext > button {
+    color: rgb(4, 6, 102);
+    border-style: solid;
+    border-radius: 15px;
+    border-color: rgba(210, 97, 251, 0.2);
+    border-width: 1px;
+    box-shadow: 0 0 3px;
+    padding: 5px;
+    background-color: rgba(210, 97, 251, 0.2);
+}
+
+/* wa button */
+/* .gift-bri .bri-wa {
+
+} */
+
+/* bungkus grid dana */
+.gift .gift-dana {
+    display: grid;
+    grid-area: dana;
+    width: 300px;
+    height: 200px;
+    margin: auto;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 6px;
+    border-color: rgba(194, 108, 184, 0.3);
+    box-shadow: 0 0 3px;
+    grid-template-areas: "logo"
+                         "text1"
+                         "text2"
+                         "copy"
+                         "wa";
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 0.5fr 0.5fr 1fr;
+}
+
+/* dana logo */
+.gift-dana .dana-logo {
+    margin: auto;
+    grid-area: logo;
+}
+
+/* no telepon */
+.gift-dana #dana-text {
+    width: 38%;
+    font-size: medium;
+    margin: auto;
+    border: 0;
+    background-color: #ffffff00;
+}
+
+/* nama pemilik dana */
+.gift-dana .dana-text1 {
+    margin: auto;
+}
+
+/* dana copytext button */
+.dana-copytext {
+    margin: auto;
+    padding: 5px;
+}
+.dana-copytext > button:hover {
+    text-decoration: none;
+    color: #fefeff;
+    transition-delay: .1s;
+    transition-duration: .1s;
+    transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+    cursor: pointer;
+}
+.dana-copytext > button {
+    color: rgb(4, 6, 102);
+    border-style: solid;
+    border-radius: 15px;
+    border-color: rgba(210, 97, 251, 0.2);
+    border-width: 1px;
+    box-shadow: 0 0 3px;
+    padding: 5px;
+    background-color: rgba(210, 97, 251, 0.2);
+}
+
+/* navbar wrapper */
+.nav-wrapper {
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 650px;
+    height: 50px;
+    background-color: rgb(225, 225, 225, .5);
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar > li{
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    width: 100%;
+    height: 70%;
+}
+
+.navbar > li > a {
+    color: rgb(4, 6, 102);
+    text-decoration: none;
+    padding: 3px 7px 3px 7px;
+    height: 85%;
+}
+
+.navbar > li > a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 3px rgb(177, 51, 255);
+    border-radius: 10px;
+}
+
+.nav-indicator {
+    width: 100%;
+    height: 5px;
+    background-color: rgba(241, 141, 230, 0.638);
+}
